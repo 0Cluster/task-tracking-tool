@@ -1,3 +1,21 @@
 spring:
   application:
     name: tasktrackingtool
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ep-quiet-cherry-a5bvntta.us-east-2.aws.neon.tech/tttdb
+    username: tttdb_owner
+    password: ad6InMCj5pTV
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: 7iZ4g5fC9kHrVv3zjdafsjdfasghgdasfhsgjdhfgfhsgjdjghgddgahfsgjdhjhgfsgdahsjdhgghdfjgkjghfgdfsgdhfjgkjhgdshdfjgk
+  expiration: 86400000
