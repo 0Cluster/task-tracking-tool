@@ -2,6 +2,8 @@ package com.cluster.tasktrackingtool.dto;
 
 import java.util.List;
 
+import com.cluster.tasktrackingtool.models.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,7 +13,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class LoginResponse {
-
-  private String username;
+  private UserDTO userDTO;
   private String jwtToken;
 }

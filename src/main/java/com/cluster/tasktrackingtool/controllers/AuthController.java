@@ -12,6 +12,7 @@ import com.cluster.tasktrackingtool.dto.LoginResponse;
 import com.cluster.tasktrackingtool.dto.MessageResponse;
 import com.cluster.tasktrackingtool.dto.SigninRequest;
 import com.cluster.tasktrackingtool.dto.SignupRequest;
+import com.cluster.tasktrackingtool.dto.UserDTO;
 import com.cluster.tasktrackingtool.models.User;
 import com.cluster.tasktrackingtool.repositories.UserRepository;
 import com.cluster.tasktrackingtool.services.AuthService;
@@ -37,7 +38,7 @@ public class AuthController {
     if (userRepository.existsByEmail(signupRequest.getEmail())) {
       return ResponseEntity.status(400).body(new MessageResponse("email already exists"));
     }
-    User newUser = authService.registerUser(signupRequest);
+    UserDTO newUser = authService.registerUser(signupRequest);
     return ResponseEntity.ok(newUser);
   }
 
